@@ -11,7 +11,10 @@ class Produto{
             this.adicionar(produto)
         }
 
+        this.cancelar(produto)
+
         this.listaTabela(produto)
+
     }
     lerDados(){
         let produto = {};
@@ -63,12 +66,19 @@ class Produto{
             
             acaoEdit.classList.add('img_size')
             
+            let acaoremove = document.createElement('img')
+            acaoremove.src = 'trash.png' 
+
+            acaoremove.classList.add('img_size')
+
             td_acao.appendChild(acaoEdit)
+            td_acao.appendChild(acaoremove)
 
         }
     }
     cancelar(){
-        alert('removido')
+        document.getElementById("nomeProduto").value = ''
+        document.getElementById("valorProduto").value = ''
     }
 
 }
