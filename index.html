@@ -27,7 +27,8 @@
                 <label>valor</label><br>
                 <input type="text" id="valorProduto" placeholder="Valor do produto">
             </div>
-            <div></div>
+            <button type="button" onclick="produto.salvar()" id="btngreen">salvar</button>
+            <button type="button" onclick="produto.cancelar()" id="btnyellow">cancelar</button>
         </div>
         <div class="content">
             <table>
@@ -37,16 +38,12 @@
                     <th class="itensCAb">valor</th>
                     <th class="itensCab">ações</th>
                 </thead>
-                <tbody>
-                    <td>01</td>
-                    <td>produto</td>
-                    <td>00.00</td>
+                <tbody id="tbody">
+                    
                 </tbody>
             </table>
         </div>
 
-            <button onclick="produto.adicionar()" id="btngreen">adicionar</button>
-            <button onclick="produto.remover()" id="btnyellow">remover</button>
     </main>
     <script src="index.js"></script>
 </body>
