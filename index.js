@@ -68,6 +68,7 @@ class Produto{
             
             let acaoremove = document.createElement('img')
             acaoremove.src = 'trash.png' 
+            acaoremove.setAttribute("onclick", "produto.deletar("+this.arrayprodutos[i].id+")")
 
             acaoremove.classList.add('img_size')
 
@@ -79,6 +80,17 @@ class Produto{
     cancelar(){
         document.getElementById("nomeProduto").value = ''
         document.getElementById("valorProduto").value = ''
+    }
+    deletar(id){
+        let tbody = document.getElementById('tbody');
+        for (let i = 0; i < this.arrayprodutos.length; i++){
+            if(this.arrayprodutos[i].id == id){
+                this.arrayprodutos.splice(i, 1)
+                tbody.deleteRow(i)
+                produto.id--
+            }
+        }
+        
     }
 
 }
